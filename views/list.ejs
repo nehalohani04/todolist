@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>To-Do List</title>
+    <link rel="stylesheet" href="/styles.css">
+</head>
+<body>
+    <div class="container">
+        <h1 class="h">To-Do List</h1>
+        <h1 class="head"><%= KindofDay %></h1>
+      
+        <ul>
+          <% for (let i = 0; i < newListItems.length; i++) { %>
+            <li class="list-item">
+              <div class="task">
+                <% if (newListItems[i] === editTask) { %>
+                  <form class="edit-form" action="/update" method="post">
+                    <input type="hidden" name="editIndex" value="<%= i %>">
+                    <input type="text" name="updatedTask" value="<%= newListItems[i] %>" autocomplete="off">
+                    <button class="update-btn" type="submit">Update</button>
+                  </form>
+                <% } else { %>
+                  <%= newListItems[i] %>
+                <% } %>
+              </div>
+              <div class="buttons">
+                <form action="/edit/<%= i %>" method="get" style="display: inline;">
+                  <button class="edit-btn" type="submit">Edit</button>
+                </form>
+                <form action="/delete" method="post" style="display: inline;">
+                  <input type="hidden" name="deleteItem" value="<%= i %>">
+                  <button class="delete-btn" type="submit">Delete</button>
+                </form>
+              </div>
+            </li>
+          <% } %>
+        </ul>
+      
+        <form action="/" method="post">
+          <input class = "input" type="text" name="newItem" autocomplete="off" placeholder="Enter a task">
+          <button class="button" type="submit">Add</button>
+        </form>
+      </div>
+
+      <script>
+        const editButtons = document.querySelectorAll('.edit-btn');
+        const editForms = document.querySelectorAll('.edit-form');
+
+        editButtons.forEach((button, index) => {
+          button.addEventListener('click', () => {
+            editForms.forEach((form) => {
+              form.style.display = 'none';
+            });
+            editForms[index].style.display = 'inline';
+          });
+        });
+      </script>
+</body>
+</html>
+
