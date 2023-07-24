@@ -25,7 +25,7 @@ ToDoList is a powerful yet user-friendly task management application built with 
 - EJS (Embedded JavaScript)
 - Git & GitHub for version control
 
-  ## Images
+## Images
   
 ![Screenshot (2)](https://github.com/nehalohani04/todolist/assets/117189607/ace88904-b207-45cf-be96-1f3464d6ee35)
 
