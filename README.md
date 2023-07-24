@@ -9,7 +9,7 @@ Manage your tasks and stay organized with ToDoList, a simple and intuitive web a
 - User-friendly and responsive design for all devices 📱💻🖥️
 - Beautifully organized task list with smooth user experience 🌟
 
-## Deployed on GitHub
+## Deployed on Vercel
 
 🚀 Deployed on GitHub: [https://github.com/nehalohani04/todolist]
 
